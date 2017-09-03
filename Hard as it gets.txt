@@ -1,0 +1,148 @@
+Search Manager : 
+
+ /**
+     * This is the constructor of SearchManager to initialize minimum transit time and maximum transit time
+     * @param minTransitTime
+     * @param maxTransitTime 
+     */
+
+/**
+     * This function iterates over Spicejet and SilkAir flights to find ComboFlights that will travel from source to destination at given DateTime d with passengers noOfPassenger satisfying required transit time limits.
+     * @param source City from where the passenger will board a flight.
+     * @param destination City where the passenger will disembark.
+     * @param spiceJet Flight array of Spicejet. 
+     * @param silkAir Flight array of SilkAir.
+     * @param noOfPassenger Number of passenger to travel.
+     * @param d DateTime of travel.
+     * @param record String[][] array of passenger seat record.
+     * @return ComboFlight array of routes that validate given conditions.
+     */
+
+/**
+     * Validates a flight based on effective period, frequency of journey and exclusive dates.
+     * @param flight Flight object containing data about a flight.
+     * @param d DateTime of travel.
+     * @return 
+     */
+
+/**
+       * This function validates SilkAir flight to match with a given SpiceJet flight.
+       * @param spiceJet Flight of Spicejet.
+       * @param silkAir Flight of SilkAir.
+       * @param spiceJetDate DateTime of spicejet journey.
+       * @param noOfPassenger Number of passengers to board at once.
+       * @param record String[][] array of passenger seat record.
+       * @return DateTime of silkAir journey if the SilkAir flight is valid else returns null.
+       */  
+
+/**
+     * Calculates time difference fetched in HHmm format.
+     * @param t1 Time1 in HHmm format 
+     * @param t2 Time2 in HHmm format
+     * @return Minutes between two given time.
+     */
+
+/**
+     * This function checks if the number of passenger to board the flight are available.
+     * @param spiceJet Flight array of Spicejet.
+     * @param silkAir Flight array of SilkAir.
+     * @param spiceJetDate DateTime of SpiceJet departure.
+     * @param silkAirDate DateTime of SilkAir departure.
+     * @param noOfPassenger noOfPassenger Number of passenger to travel.
+     * @param record String[][] array of passenger seat record.
+     * @return True if seats are available else return false.
+     */
+
+/**
+     * Calculates the total time of journey.
+     * @param spiceJetDeparture DateTime of spicejet departure.
+     * @param silkAirDate DateTime of silkAir departure.
+     * @param silkAir SilkAir flight.
+     * @return Total travel time in minutes.
+     */
+
+----------------------------------------------------------------------------------------
+
+DataManager : 
+
+ /**
+     * Constructor of DataManager class. 
+     * @param spiceJetFileName Name of file for spiceJet flight record.
+     * @param silkAirFileName Name of file for silkAir flight record.
+     */
+
+/**
+     * This function converts dd MMM yyyy HH:mm:ss format DateTime to dd/MM/yyyy HH:mm:ss format.
+     * @param num Date in "dd MMM yyyy HH:mm:ss" format to be parsed
+     * @return parsed DateTime in dd/MM/yyyy HH:mm:ss format
+     */
+
+/**
+     * This function splits arrival and departure time separated by "/"
+     * @param n String in departure/arrival format.
+     * @return String array separating departure and arrival.
+     */
+
+/**
+     * Converts hh:mm aa format time to HHmm format.
+     * @param n String containing time in 12hr format. 
+     * @return String containing time in 24hr format.
+     */
+
+ /**
+     * Decodes the remark column of flights if any.
+     * @param f Flight object to instantiate.
+     * @param n Remark that is to be decoded.
+     * @return Instantiated Flight object.
+     */
+
+
+ /**
+     * This function reads and returns Flight array of SpiceJet.
+     * @return Flight array of SpiceJet.
+     */
+
+/**
+     * This function reads and returns Flight array of SilkAir.
+     * @return Flight array of SilkAir.
+     */
+
+/**
+     * This function writes the booking details into file.
+     * @param b Booking object containing user booking data.
+     */
+
+/**
+     * This function updates PassengerCount file after transaction is complete.
+     * @param b Booking object containing user booking data.
+     */
+
+
+/**
+     * This function reads PassengerCount from file.
+     * @return String[][] array of Seat Record.
+     */
+
+/**
+     * This function creates PassengerCount file if it doesn't exist.
+     * @param spiceJet Flight array of Spicejet.
+     * @param silkAir Flight array of SilkAir.
+     */
+
+-------------------------------------------------------------------------------------
+
+BookingManager
+
+/**
+     * Creates an object of booking with the following data as parameter and produces unique flight booking number.
+     * @param name Name of Passenger booking tickets.
+     * @param comboFlight Object of ComboFlight class.
+     * @return Object of Booking class
+     */
+
+
+/**
+     * Function to produce unique flight booking number by concatenating current Date and Time along with acronym of application.
+     * @return Unique Flight booking number. 
+     */
+
